@@ -7,7 +7,7 @@ server <- function(input, output, session) {
   survey_responses <- 
     reactive({
       #invalidateLater(1000)
-      googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1rQR8V3xblApe03yE5yqGdqnqSR9_rj1ySf685KOow4Y/edit?gid=194633045#gid=194633045")
+      googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1rQR8V3xblApe03yE5yqGdqnqSR9_rj1ySf685KOow4Y")
     })
   
   # Show the data table

@@ -5,3 +5,6 @@
 library(shiny)
 library(DT)
 library(googlesheets4)
+
+# Sheet is public (for now); no authentication needed
+gs4_deauth()
