@@ -18,3 +18,8 @@ Testing functionality of importing live Google Forms responses into a Shiny app
 * Used `rsconnect::writeManifest()` to capture app dependencies
 * Tried deploying to Posit Connect Cloud from GitHub [here](https://connect.posit.cloud/zajichek/content/0194aaac-8a80-73ac-40c1-e3c77b2dd524)
   + As expected, errors persisted due to authentication issues
+* Used the `gs4_deauth()` function in `global.R` to specify no authentication needed for sheet access
+  + Works after setting the Google Sheet to public access with the link
+  + App is now live on Posit Connect Cloud: https://0194aaac-8a80-73ac-40c1-e3c77b2dd524.share.connect.posit.cloud/
+* Now the (live) app imports the updated Google Sheets dataset, allows filtering by question, and displays the results in a bar plot + a table
+  + Need to work on updating results (e.g., with a "refresh" button)
