@@ -16,3 +16,5 @@ Testing functionality of importing live Google Forms responses into a Shiny app
 * When loaded, the app currently just imports the data in the Sheet and displays it in the app
   + Tried submitting a new response to the survey and re-running the app; all records displayed
 * Used `rsconnect::writeManifest()` to capture app dependencies
+* Tried deploying to Posit Connect Cloud from GitHub [here](https://connect.posit.cloud/zajichek/content/0194aaac-8a80-73ac-40c1-e3c77b2dd524)
+  + As expected, errors persisted due to authentication issues
