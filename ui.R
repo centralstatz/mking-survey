@@ -4,32 +4,76 @@
 ui <- 
   
   # Make a page
-  fluidPage(
+  page_sidebar(
+    theme = bs_theme(bootswatch = "sandstone"),
     title = "Google Forms Survey Responses",
     
-    # Make a sidebar layout
-    sidebarLayout(
-      
-      # Filter panel
-      sidebarPanel(
+    # Add tag to remove padding from time plot
+    tags$head(
+      tags$style(HTML("
+      div.nopad .value-box-area {
+        padding: 0;
+      }
+    "))
+    ),
+    
+    # Make a sidebar
+    sidebar = 
+      sidebar(
         
         # Question selector
         selectInput(
           inputId = "question",
           label = "Question",
           choices = names(initial_sheet)[-1]
+        ),
+        
+        # Button to refresh the data
+        actionButton(
+          inputId = "refresh",
+          label = "Refresh"
         )
         
       ),
+    
+    ## Main output
+    
+    # Cards displaying overall metrics
+    layout_columns(
+      max_height = "250px",
       
-      # Display panel
-      mainPanel(
-        
-        # Plot showing the selected results
-        plotlyOutput(outputId = "plot"),
-        
-        # Table with all records
-        dataTableOutput("table")
+      # Completed forms
+      value_box(
+        title = "Total Respondents",
+        value = textOutput("completed_forms"),
+        showcase = bs_icon("ui-checks"),
+        theme = "blue"
+      ),
+      
+      # Graph form completion times
+      value_box(
+        title = "Completion Times",
+        value = plotlyOutput(outputId = "completion_time"),
+        class = "p-0 nopad",
+        full_screen = TRUE
+      )
+    ),
+    
+    # Bar plot showing results
+    card(
+      card_header("Response Distribution"),
+      card_body(
+        plotlyOutput(outputId = "response_distribution")
+      ),
+      full_screen = TRUE
+    ),
+    
+    # Table showing the full response set in tabular form
+    accordion(
+      open = FALSE,
+      accordion_panel(
+        title = "Tabular Data",
+        dataTableOutput("response_table")
       )
     )
   )

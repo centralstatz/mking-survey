@@ -6,7 +6,7 @@ Testing functionality of importing live Google Forms responses into a Shiny app
 
 ## 1/27/2025
 
-* Made a Goole Form to test with [here](https://docs.google.com/forms/d/e/1FAIpQLScP3766W9xhidr5f8I_WfGB64aZ5uXeIErItu-tzH11rMiCZQ/viewform)
+* Made a Google Form to test with [here](https://docs.google.com/forms/d/e/1FAIpQLScP3766W9xhidr5f8I_WfGB64aZ5uXeIErItu-tzH11rMiCZQ/viewform)
 * Linked responses to get automatically sent [here](https://docs.google.com/spreadsheets/d/1rQR8V3xblApe03yE5yqGdqnqSR9_rj1ySf685KOow4Y/edit?gid=194633045#gid=194633045)
 * Used [this page](https://forum.posit.co/t/trying-to-display-a-table-from-live-poll-results-using-r-shiny/84330/3) to guide development
 * When I first ran the app, had to authenticate with OAuth and approve tidyverse API to access Google
@@ -23,3 +23,16 @@ Testing functionality of importing live Google Forms responses into a Shiny app
   + App is now live on Posit Connect Cloud: https://0194aaac-8a80-73ac-40c1-e3c77b2dd524.share.connect.posit.cloud/
 * Now the (live) app imports the updated Google Sheets dataset, allows filtering by question, and displays the results in a bar plot + a table
   + Need to work on updating results (e.g., with a "refresh" button)
+  
+  ## 1/29/2025
+  * Added a dependency for `bslib` to facilitate dashboard appearance
+  * Added an `actionButton` that can be clicked to refresh the most recent data on demand
+  
+  ## 1/30/2025
+  * Added a dependency on `tidyr` and `dplyr` to facilitate data manipulation
+  * Added dependency on `forcats` for nicer plot display
+  * Added the following components:
+    + Card to tabulate to responses
+    + Plot to view response times
+    + Interactive bar plot to show distribution of responses for the selected question
+    + Collapsible table to view tabular data

@@ -7,6 +7,11 @@ library(DT)
 library(googlesheets4)
 library(plotly)
 library(ggplot2)
+library(bslib)
+library(bsicons)
+library(dplyr)
+library(tidyr)
+library(forcats)
 
 # Sheet is public (for now); no authentication needed
 gs4_deauth()
