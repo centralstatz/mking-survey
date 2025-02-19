@@ -6,7 +6,7 @@ ui <-
   # Make a page
   page_sidebar(
     theme = bs_theme(bootswatch = "sandstone"),
-    title = "Google Forms Survey Responses",
+    title = "370 Class Surveys",
     
     # Add tag to remove padding from time plot
     tags$head(

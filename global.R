@@ -19,7 +19,7 @@ gs4_deauth()
 # Utility function to load the sheet
 load_sheet <- 
   function() 
-    googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/1rQR8V3xblApe03yE5yqGdqnqSR9_rj1ySf685KOow4Y")
+    googlesheets4::read_sheet("https://docs.google.com/spreadsheets/d/182-fJACcL7ryFC6SMvdci8R2WCG68dawPF4LpNVXfdg")
 
 # Call it once to gather metadata
 initial_sheet <- load_sheet()

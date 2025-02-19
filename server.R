@@ -23,6 +23,9 @@ server <- function(input, output, session) {
   output$completion_time <-
     renderPlotly({
       
+      # Check for data
+      validate(need(nrow(survey_responses()) > 0, "No responses"))
+      
       survey_responses() |>
         
         # Sort by response time
@@ -55,6 +58,9 @@ server <- function(input, output, session) {
   # Get distribution of selected question
   current_response_distribution <-
     reactive({
+      
+      # Check for data
+      validate(need(nrow(survey_responses()) > 0, "No responses"))
       
       survey_responses() |>
         

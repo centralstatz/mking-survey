@@ -24,15 +24,22 @@ Testing functionality of importing live Google Forms responses into a Shiny app
 * Now the (live) app imports the updated Google Sheets dataset, allows filtering by question, and displays the results in a bar plot + a table
   + Need to work on updating results (e.g., with a "refresh" button)
   
-  ## 1/29/2025
-  * Added a dependency for `bslib` to facilitate dashboard appearance
-  * Added an `actionButton` that can be clicked to refresh the most recent data on demand
+## 1/29/2025
+
+* Added a dependency for `bslib` to facilitate dashboard appearance
+* Added an `actionButton` that can be clicked to refresh the most recent data on demand
   
-  ## 1/30/2025
-  * Added a dependency on `tidyr` and `dplyr` to facilitate data manipulation
-  * Added dependency on `forcats` for nicer plot display
-  * Added the following components:
-    + Card to tabulate to responses
-    + Plot to view response times
-    + Interactive bar plot to show distribution of responses for the selected question
-    + Collapsible table to view tabular data
+## 1/30/2025
+
+* Added a dependency on `tidyr` and `dplyr` to facilitate data manipulation
+* Added dependency on `forcats` for nicer plot display
+* Added the following components:
+  + Card to tabulate to responses
+  + Plot to view response times
+  + Interactive bar plot to show distribution of responses for the selected question
+  + Collapsible table to view tabular data
+    
+## 2/19/2025
+
+* Changed Google Sheet [source link](https://docs.google.com/spreadsheets/d/182-fJACcL7ryFC6SMvdci8R2WCG68dawPF4LpNVXfdg) to [Marvin's example survey](https://docs.google.com/forms/d/e/1FAIpQLSep8TusWkAGpDUnc3QiyBxAp8UY8PiZov3tpo6IV3mifcigsA/viewform?usp=header)
+* Used `validate` to ensure there are responses before trying to graph results
