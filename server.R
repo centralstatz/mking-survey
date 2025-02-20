@@ -19,7 +19,7 @@ server <- function(input, output, session) {
   })
   
   # Import the dataset
-  survey_responses <- 
+  load_responses <- 
     eventReactive(
       input$refresh,
       {
@@ -30,6 +30,20 @@ server <- function(input, output, session) {
       },
       ignoreNULL = FALSE
     )
+  
+  # Filter the dataset
+  survey_responses <-
+    reactive({
+      
+      load_responses() |>
+        
+        # Filter to date range
+        filter(
+          as.Date(Timestamp) >= min(input$response_range),
+          as.Date(Timestamp) <= max(input$response_range)
+        )
+      
+    })
   
   # Display the number of respondents
   output$completed_forms <- renderText({nrow(survey_responses())})

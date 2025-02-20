@@ -40,6 +40,14 @@ ui <-
           choices = names(initial_sheet)[-1]
         ),
         
+        # Response range
+        dateRangeInput(
+          inputId = "response_range",
+          label = "Response Date Range",
+          start = Sys.Date() - 90,
+          end = Sys.Date()
+        ),
+        
         # Button to refresh the data
         actionButton(
           inputId = "refresh",
