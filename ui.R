@@ -6,7 +6,7 @@ ui <-
   # Make a page
   page_sidebar(
     theme = bs_theme(bootswatch = "sandstone"),
-    title = "370 Class Surveys",
+    title = "Class Surveys",
     
     # Add tag to remove padding from time plot
     tags$head(
@@ -20,6 +20,18 @@ ui <-
     # Make a sidebar
     sidebar = 
       sidebar(
+        
+        # Course selector
+        selectInput(
+          inputId = "course",
+          label = "Course",
+          choices = 
+            c(
+              "101",
+              "370",
+              "LIBA"
+            )
+        ),
         
         # Question selector
         selectInput(

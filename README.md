@@ -43,3 +43,10 @@ Testing functionality of importing live Google Forms responses into a Shiny app
 
 * Changed Google Sheet [source link](https://docs.google.com/spreadsheets/d/182-fJACcL7ryFC6SMvdci8R2WCG68dawPF4LpNVXfdg) to [Marvin's example survey](https://docs.google.com/forms/d/e/1FAIpQLSep8TusWkAGpDUnc3QiyBxAp8UY8PiZov3tpo6IV3mifcigsA/viewform?usp=header)
 * Used `validate` to ensure there are responses before trying to graph results
+
+## 2/20/2025
+
+* Changed app title
+* Add `selectInput` to choose a course to view survey from
+* Made function in `global.R` to retrieve sheet based on course selected
+* Updated `server.R` to dynamically change the questions displayed with course selection

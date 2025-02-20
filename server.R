@@ -3,6 +3,21 @@
 
 server <- function(input, output, session) {
   
+  # Dynamically update question list based on selected course survey
+  observe({
+    
+    # Import the sheet
+    sheet <- load_sheet(input$course)
+    
+    # Update the question list
+    updateSelectInput(
+      session = session,
+      inputId = "question",
+      choices = names(sheet)[-1]
+    )
+    
+  })
+  
   # Import the dataset
   survey_responses <- 
     eventReactive(
@@ -10,7 +25,7 @@ server <- function(input, output, session) {
       {
         
         # Call the function that reads the sheet (in global.R)
-        load_sheet()
+        load_sheet(input$course)
         
       },
       ignoreNULL = FALSE
@@ -70,6 +85,9 @@ server <- function(input, output, session) {
           names_to = "Question",
           values_to = "Response"
         ) |>
+        
+        # Fill in NULL values
+        mutate(Response = coalesce(Response, "No Response")) |>
         
         # Compute counts
         summarize(
