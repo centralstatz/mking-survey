@@ -51,3 +51,8 @@ Testing functionality of importing live Google Forms responses into a Shiny app
 * Made function in `global.R` to retrieve sheet based on course selected
 * Updated `server.R` to dynamically change the questions displayed with course selection
 * Add a `dateRangeInput` to select responses based on the timestamp
+
+## 2/22/2025
+
+* Added additional surveys for 313, 315, and 318
+* Changed `server.R` behavior to dynamically update everything when you change the course

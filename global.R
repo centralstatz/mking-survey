@@ -24,7 +24,19 @@ load_sheet <-
     if(course == "101") {
       
       sheet <- "https://docs.google.com/spreadsheets/d/19nKF-rIylgM1-weO1mrUXUmOp7h7NxqCfShHPlW65iI"
+    
+    } else if(course == "313") {
       
+      sheet <- "https://docs.google.com/spreadsheets/d/1ZmSiZcHJWb0VGiy1uJ4wYlC0g8bfnM4XdUJ_SdJ03sc"
+      
+    } else if(course == "315") {
+      
+      sheet <- "https://docs.google.com/spreadsheets/d/1YiAaHJ96XNLsCW6wqyXL8rJVvZfHBYP1bh2XJLsQmRo"
+      
+    } else if(course == "318") {
+      
+      sheet <- "https://docs.google.com/spreadsheets/d/1bcPeRCVmXb-99TzoOGMQDgk9lUodnlkKRQ7xUztn1bY"
+        
     } else if(course == "370") {
       
       sheet <- "https://docs.google.com/spreadsheets/d/182-fJACcL7ryFC6SMvdci8R2WCG68dawPF4LpNVXfdg"
